@@ -123,6 +123,9 @@ class WXDLLIMPEXP_FWD_CORE wxScrollBar;
 #define wxSCI_MARK_CHARACTER 10000
 
 // Markers used for outlining and changed column.
+/* C::B begin */
+#define wxSCI_MARKNUM_LASTUNUSED 22
+/* C::B end */
 #define wxSCI_MARKNUM_CHANGEUNSAVED 23
 #define wxSCI_MARKNUM_CHANGESAVED 24
 #define wxSCI_MARKNUM_FOLDEREND 25

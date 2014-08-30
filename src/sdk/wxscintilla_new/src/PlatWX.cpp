@@ -372,9 +372,15 @@ void SurfaceImpl::AlphaRectangle(PRectangle rc, int cornerSize,
     wxGCDC dc(*(wxMemoryDC*)hDC);
     wxColour penColour(wxColourFromCDandAlpha(outline, alphaOutline));
     wxColour brushColour(wxColourFromCDandAlpha(fill, alphaFill));
-    dc.SetPen(wxPen(penColour));
-    dc.SetBrush(wxBrush(brushColour));
-    dc.DrawRoundedRectangle(wxRectFromPRectangle(rc), cornerSize);
+/* C::B begin */
+    wxRect rect = wxRectFromPRectangle(rc);
+    wxPoint lt = rect.GetLeftTop()+ wxPoint(1,1);
+    wxSize size = rect.GetSize()-wxSize(2,2);
+
+    dc.SetPen(*wxTRANSPARENT_PEN);
+    dc.SetBrush(*wxTRANSPARENT_BRUSH);
+    dc.DrawRoundedRectangle(rect, cornerSize);
+/* C::B end */
     return;
 #else
 
