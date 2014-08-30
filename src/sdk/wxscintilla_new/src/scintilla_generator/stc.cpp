@@ -647,7 +647,7 @@ void wxStyledTextCtrl::MarkerDefineBitmap(int markerNumber, const wxBitmap& bmp)
         buff[len] = 0;
         SendMsg(SCI_MARKERDEFINEPIXMAP, markerNumber, (sptr_t)buff);
         delete [] buff;
-
+        
 }
 
 // Add a set of markers to a line.
@@ -845,7 +845,7 @@ int wxStyledTextCtrl::StyleGetCase(int style) const
     return SendMsg(SCI_STYLEGETCASE, style, 0);
 }
 
-// Get the character set of the font in a style.
+// Get the character get of the font in a style.
 int wxStyledTextCtrl::StyleGetCharacterSet(int style) const
 {
     return SendMsg(SCI_STYLEGETCHARACTERSET, style, 0);
@@ -1293,7 +1293,7 @@ void wxStyledTextCtrl::RegisterImage(int type, const wxBitmap& bmp) {
         buff[len] = 0;
         SendMsg(SCI_REGISTERIMAGE, type, (sptr_t)buff);
         delete [] buff;
-
+     
 }
 
 // Clear all the registered images.
@@ -4147,7 +4147,7 @@ int wxStyledTextCtrl::GetTechnology() const
 
 // Create an ILoader*.
 void* wxStyledTextCtrl::CreateLoader(int bytes) const {
-         return (void*)(sptr_t)SendMsg(SCI_CREATELOADER, bytes);
+         return (void*)(sptr_t)SendMsg(SCI_CREATELOADER, bytes); 
 }
 
 // Move caret to before first visible character on display line.
@@ -4199,7 +4199,7 @@ void wxStyledTextCtrl::SetRepresentation(const wxString& encodedCharacter, const
     SendMsg(SCI_SETREPRESENTATION, (sptr_t)(const char*)wx2stc(encodedCharacter), (sptr_t)(const char*)wx2stc(representation));
 }
 
-// Get the way a character is drawn.
+// Set the way a character is drawn.
 wxString wxStyledTextCtrl::GetRepresentation(const wxString& encodedCharacter) const {
          int msg = SCI_GETREPRESENTATION;
          int len = SendMsg(msg, (sptr_t)(const char*)wx2stc(encodedCharacter), (sptr_t)NULL);
@@ -4309,7 +4309,7 @@ int wxStyledTextCtrl::GetStyleBitsNeeded() const
 
 // For private communication between an application and a known lexer.
 void* wxStyledTextCtrl::PrivateLexerCall(int operation, void* pointer) {
-           return (void*)(sptr_t)SendMsg(SCI_PRIVATELEXERCALL, operation, (sptr_t)pointer);
+           return (void*)(sptr_t)SendMsg(SCI_PRIVATELEXERCALL, operation, (sptr_t)pointer); 
 }
 
 // Retrieve a '\n' separated list of properties understood by the current lexer.

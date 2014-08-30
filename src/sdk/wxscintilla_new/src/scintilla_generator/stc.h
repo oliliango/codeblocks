@@ -115,9 +115,9 @@ class WXDLLIMPEXP_FWD_CORE wxScrollBar;
 #define wxSTC_MARK_CHARACTER 10000
 
 /// CHANGEBAR begin #
-/// Markers used for outlining and changed column.
-#define wxSTC_MARKNUM_CHANGEUNSAVED 23
-#define wxSTC_MARKNUM_CHANGESAVED 24
+/// Markers used for outlining and changed column. 
+#define wxSTC_MARKNUM_CHANGEUNSAVED 23 
+#define wxSTC_MARKNUM_CHANGESAVED 24 
 
 /// CHANGEBAR end #
 #define wxSTC_MARKNUM_FOLDEREND 25
@@ -2992,7 +2992,7 @@ public:
     // Get is a style mixed case, or to force upper or lower case.
     int StyleGetCase(int style) const;
 
-    // Get the character set of the font in a style.
+    // Get the character get of the font in a style.
     int StyleGetCharacterSet(int style) const;
 
     // Get is a style visible or not.
@@ -4625,7 +4625,7 @@ public:
     // Set the way a character is drawn.
     void SetRepresentation(const wxString& encodedCharacter, const wxString& representation);
 
-    // Get the way a character is drawn.
+    // Set the way a character is drawn.
     wxString GetRepresentation(const wxString& encodedCharacter) const;
 
     // Remove a character representation.
@@ -5183,7 +5183,7 @@ public:
     int  GetToken() const                 { return m_token; }
     int  GetAnnotationsLinesAdded() const { return m_annotationLinesAdded; }
     int  GetUpdated() const               { return m_updated; }
-
+    
 #ifdef STC_USE_DND
     // Kept for backwards compatibility, use GetString().
     wxString GetDragText()           { return GetString(); }
@@ -5224,8 +5224,8 @@ private:
     int m_x;
     int m_y;
 
-    int m_token;                // wxEVT_STC__MODIFIED with SC_MOD_CONTAINER
-    int m_annotationLinesAdded; // wxEVT_STC_MODIFIED with SC_MOD_CHANGEANNOTATION
+    int m_token;                // wxEVT_STC__MODIFIED with SC_MOD_CONTAINER 
+    int m_annotationLinesAdded; // wxEVT_STC_MODIFIED with SC_MOD_CHANGEANNOTATION 
     int m_updated;              // wxEVT_STC_UPDATEUI
 
 #if wxUSE_DRAG_AND_DROP
